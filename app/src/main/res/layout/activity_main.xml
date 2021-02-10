@@ -48,8 +48,7 @@
             android:layout_weight="5"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="20sp"
-            android:paddingRight="5sp">
+            android:paddingLeft="20sp">
 
             <TextView
                 android:id="@+id/textView2"
@@ -70,9 +69,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:orientation="vertical"
-            android:paddingHorizontal="5sp"
+            android:paddingHorizontal="15sp"
             android:gravity="center">
 
             <Switch
@@ -80,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Frosting"
+                android:layout_weight="1"
                 android:checked="true" />
 
             <Switch
@@ -87,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Candles"
+                android:layout_weight="1"
                 android:checked="true" />
 
         </LinearLayout>
@@ -97,7 +98,7 @@
             android:layout_weight="0"
             android:gravity="right"
             android:orientation="vertical"
-            android:paddingHorizontal="5sp">
+            android:paddingHorizontal="15sp">
 
             <Button
                 android:id="@+id/button2"
