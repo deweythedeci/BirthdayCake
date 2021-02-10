@@ -13,11 +13,13 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Happy Birthday"
             android:textColor="#ffff9f00"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:gravity="center" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -42,9 +44,12 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20sp"
+            android:paddingRight="5sp">
 
             <TextView
                 android:id="@+id/textView2"
@@ -56,36 +61,43 @@
             <SeekBar
                 android:id="@+id/seekBar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="2"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingHorizontal="5sp"
+            android:gravity="center">
 
             <Switch
                 android:id="@+id/switch1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Frosting" />
+                android:text="Frosting"
+                android:checked="true" />
 
             <Switch
                 android:id="@+id/switch2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Candles" />
+                android:text="Candles"
+                android:checked="true" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:gravity="right"
             android:orientation="vertical"
-            android:layout_weight="0">
+            android:paddingHorizontal="5sp">
 
             <Button
                 android:id="@+id/button2"
