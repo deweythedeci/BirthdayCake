@@ -73,14 +73,17 @@ public class CakeView extends SurfaceView {
     public void drawCandle(Canvas canvas, float left, float bottom) {
         canvas.drawRect(left, bottom - candleHeight, left + candleWidth, bottom, candlePaint);
 
-        //draw the outer flame
-        float flameCenterX = left + candleWidth/2;
-        float flameCenterY = bottom - wickHeight - candleHeight - outerFlameRadius/3;
-        canvas.drawCircle(flameCenterX, flameCenterY, outerFlameRadius, outerFlamePaint);
+        //checks if the model indicates the flame should be drawn
+        if(model.litCandles) {
+            //draw the outer flame
+            float flameCenterX = left + candleWidth / 2;
+            float flameCenterY = bottom - wickHeight - candleHeight - outerFlameRadius / 3;
+            canvas.drawCircle(flameCenterX, flameCenterY, outerFlameRadius, outerFlamePaint);
 
-        //draw the inner flame
-        flameCenterY += outerFlameRadius/3;
-        canvas.drawCircle(flameCenterX, flameCenterY, innerFlameRadius, innerFlamePaint);
+            //draw the inner flame
+            flameCenterY += outerFlameRadius / 3;
+            canvas.drawCircle(flameCenterX, flameCenterY, innerFlameRadius, innerFlamePaint);
+        }
 
         //draw the wick
         float wickLeft = left + candleWidth/2 - wickWidth/2;
@@ -121,9 +124,14 @@ public class CakeView extends SurfaceView {
         //Then a second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
 
-        //Now a candle in the center
-        drawCandle(canvas, cakeLeft + cakeWidth/3 - candleWidth/2, cakeTop);
-        drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - candleWidth/2, cakeTop);
+        //Checks if model indicates candles should be drawn
+        if(model.showCandles) {
+            //Now draw the candles
+            for(int i = 1; i <= model.amountCandles; i++){
+                drawCandle(canvas, cakeLeft + (i * cakeWidth / (model.amountCandles + 1))
+                                    - (candleWidth / 2), cakeTop);
+            }
+        }
 
     }//onDraw
 
