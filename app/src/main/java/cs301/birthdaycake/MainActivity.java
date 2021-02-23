@@ -6,12 +6,16 @@ import android.view.View;
 import android.util.Log;
 import android.os.Bundle;
 
+import java.util.concurrent.CancellationException;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        CakeView cakeView = findViewById(R.id.cakeview);
+        CakeController cakeCtrl = new CakeController(cakeView);
     }
 
     public void goodbye(View button){
