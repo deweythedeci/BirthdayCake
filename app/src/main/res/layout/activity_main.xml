@@ -101,7 +101,7 @@
             android:paddingHorizontal="15sp">
 
             <Button
-                android:id="@+id/blowOutButton"
+                android:id="@+id/Extinguish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BLOW OUT" />
