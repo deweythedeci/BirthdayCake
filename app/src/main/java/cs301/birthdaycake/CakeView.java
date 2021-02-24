@@ -36,8 +36,8 @@ public class CakeView extends SurfaceView {
 
     private CakeModel model;
 
-    /**
-     * ctor must be overridden here as per standard Java inheritance practice.  We need it
+    /*
+     * constructor must be overridden here as per standard Java inheritance practice.  We need it
      * anyway to initialize the member variables
      */
     public CakeView(Context context, AttributeSet attrs) {
@@ -66,7 +66,7 @@ public class CakeView extends SurfaceView {
 
     }
 
-    /**
+    /*
      * draws a candle at a specified position.  Important:  the left, bottom coordinates specify
      * the position of the bottom left corner of the candle
      */
@@ -92,7 +92,7 @@ public class CakeView extends SurfaceView {
 
     }
 
-    /**
+    /*
      * onDraw is like "paint" in a regular Java program.  While a Canvas is
      * conceptually similar to a Graphics in javax.swing, the implementation has
      * many subtle differences.  Show care and read the documentation.
