@@ -5,9 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CakeView extends SurfaceView {
+    //implements View.OnTouchListener
 
     /* These are the paints we'll use to draw the birthday cake below */
     Paint cakePaint = new Paint();
@@ -16,6 +19,10 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+
+    // lab4
+    /*float x;
+    float y;*/
 
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
@@ -42,6 +49,8 @@ public class CakeView extends SurfaceView {
      */
     public CakeView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        //this.setOnTouchListener(this);
 
         //This is essential or your onDraw method won't get called
         setWillNotDraw(false);
@@ -133,12 +142,27 @@ public class CakeView extends SurfaceView {
             }
         }
 
+        Paint paint = new Paint();
+        paint.setColor(Color.RED);
+
+        paint.setTextSize(50);
+        canvas.drawText("x: "+model.x+", y: "+model.y, 1900, 1350, paint);
+
     }//onDraw
+
 
     //CakeModel accessor
     public CakeModel getModel(){
         return model;
     }
+
+    /*public boolean onTouch(View view, MotionEvent motionEvent){
+        x = motionEvent.getX();
+        y = motionEvent.getY();
+
+        this.invalidate();
+        return false;
+    }*/
 
 }//class CakeView
 
