@@ -1,6 +1,5 @@
 package cs301.birthdaycake;
 
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.util.Log;
@@ -8,8 +7,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
-
-import java.util.concurrent.CancellationException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         CakeController cakeCtrl = new CakeController(cakeView);
 
         //links UI elements to the CakeController
-        Button blowOutButton = findViewById(R.id.blowOutButton);
+        Button blowOutButton = findViewById(R.id.Extinguish);
         blowOutButton.setOnClickListener(cakeCtrl);
 
         CompoundButton showCandlesSwitch = findViewById(R.id.candlesSwitch);
