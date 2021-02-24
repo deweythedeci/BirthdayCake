@@ -14,8 +14,8 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
 
     public CakeController(CakeView cakeView){
         this.cakeView = cakeView;
-        this.cakeView.setOnTouchListener(this);
         model = cakeView.getModel();
+        this.cakeView.setOnTouchListener(this);
     }
 
     @Override
@@ -40,13 +40,14 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
     public void onStartTrackingTouch(SeekBar seekBar) {}
     public void onStopTrackingTouch(SeekBar seekBar) {}
 
-    @Override
-    public boolean onTouch(View view, MotionEvent motionEvent) {
+    public boolean onTouch(View view, MotionEvent motionEvent){
 
-        //sets a balloon to be drawn at the location of the touch
+        //sets a balloon to be drawn
         model.showBalloon = true;
-        model.balloonX = motionEvent.getX();
-        model.balloonY = motionEvent.getY();
+
+        //keeps track of the touch location
+        model.x = motionEvent.getX();
+        model.y = motionEvent.getY();
 
         //redraws the entire CakeView
         this.cakeView.invalidate();

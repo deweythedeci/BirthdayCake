@@ -6,6 +6,6 @@ public class CakeModel {
     public boolean showFrosting = true;
     public boolean showCandles = true;
     public boolean showBalloon = false;
-    public float balloonX;
-    public float balloonY;
+    public float x;
+    public float y;
 }

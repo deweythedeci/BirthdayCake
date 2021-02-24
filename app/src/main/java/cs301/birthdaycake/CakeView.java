@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
 
@@ -86,7 +84,7 @@ public class CakeView extends SurfaceView {
 
     }
 
-    /*
+    /**
      * draws a candle at a specified position.  Important:  the left, bottom coordinates specify
      * the position of the bottom left corner of the candle
      */
@@ -175,7 +173,13 @@ public class CakeView extends SurfaceView {
         }
 
         //Draws balloon if it should be drawn
-        if(model.showBalloon){ drawBalloon(canvas, model.balloonX, model.balloonY); }
+        if(model.showBalloon){ drawBalloon(canvas, model.x, model.y); }
+
+        Paint paint = new Paint();
+        paint.setColor(Color.RED);
+
+        paint.setTextSize(50);
+        canvas.drawText("x: "+model.x+", y: "+model.y, 1900, 1350, paint);
 
     }//onDraw
 
